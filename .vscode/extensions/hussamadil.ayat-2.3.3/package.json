@@ -1,0 +1,102 @@
+{
+	"name": "ayat",
+	"displayName": "Ayat",
+	"description": "Get a verse(an aya) from the Quran during your coding session 💻 stay connected with the words of Allah. 🕋💚 ",
+	"version": "2.3.3",
+	"icon": "images/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/HussamAdil/Ayat.git"
+	},
+	"license": "MIT",
+	"publisher": "Hussamadil",
+	"author": "Hussam adil <hussam0683@gmail.com>",
+	"engines": {
+		"vscode": "^1.61.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"quotes",
+		"motivation",
+		"quran",
+		"ayat",
+		"Islam"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Ayat",
+			"properties": {
+				"ayat.language": {
+					"type": "string",
+					"description": "Select preferable language",
+					"default": "Arabic",
+					"order": 1,
+					"enum": [
+						"Arabic",
+						"English"
+					]
+				},
+				"ayat.repeatedEveryMinute": {
+					"type": "number",
+					"default": 30,
+					"order": 2,
+					"enum": [
+						10,
+						15,
+						30,
+						60,
+						90,
+						120,
+						180
+					],
+					"description": "Select time between ayat notification."
+				},
+				"ayat.getSuraName": {
+					"type": "boolean",
+					"order": 3,
+					"description": "Get Sura Name with Aya",
+					"default": true
+				}
+			}
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.61.0",
+		"@vscode/test-electron": "^2.1.5",
+		"eslint": "^8.20.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.0.0",
+		"typescript": "^4.7.4"
+	},
+	"dependencies": {
+		"axios": "^0.27.2",
+		"yarn": "^1.22.19"
+	},
+	"__metadata": {
+		"id": "d5a4f186-11d2-4631-8a26-a6162650ce95",
+		"publisherId": "f6b380af-0447-4d52-9baf-87eb5cba9988",
+		"publisherDisplayName": "Hussam_adil",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1716871361110,
+		"pinned": false,
+		"source": "gallery"
+	}
+}

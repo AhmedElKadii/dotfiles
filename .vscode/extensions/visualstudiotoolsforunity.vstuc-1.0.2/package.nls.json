@@ -1,0 +1,10 @@
+{
+    "extension.displayName": "Unity",
+    "extension.description": "Integrates Visual Studio Code with Unity",
+    "commands.attachUnityDebugger.title": "Attach Unity Debugger",
+    "commands.showUnityAPIReference.title": "Unity API Reference",
+    "configuration.projectPath.description": "Project Path",
+    "configuration.logFile.description": "Path to the log file for the debugger",
+    "configuration.endPoint.description": "ip:port",
+    "configuration.refreshOnSave.description": "Refresh Unity's Asset Database when saving a C# script"
+}

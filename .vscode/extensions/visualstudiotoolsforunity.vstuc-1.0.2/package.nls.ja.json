@@ -1,0 +1,10 @@
+{
+	"extension.displayName": "Unity",
+	"extension.description": "Unity と Visual Studio Code を統合する",
+	"commands.attachUnityDebugger.title": "Unity デバッガーのアタッチ",
+	"commands.showUnityAPIReference.title": "Unity API リファレンス",
+	"configuration.projectPath.description": "プロジェクト パス",
+	"configuration.logFile.description": "デバッガーのログ ファイルへのパス",
+	"configuration.endPoint.description": "ip:port",
+	"configuration.refreshOnSave.description": "C# スクリプトを保存するときに Unity のアセット データベースを更新する"
+}

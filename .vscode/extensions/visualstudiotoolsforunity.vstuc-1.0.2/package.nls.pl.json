@@ -1,0 +1,10 @@
+{
+	"extension.displayName": "Unity",
+	"extension.description": "Integruje program Visual Studio Code z aparatem Unity",
+	"commands.attachUnityDebugger.title": "Dołącz debuger aparatu Unity",
+	"commands.showUnityAPIReference.title": "Dokumentacja dotycząca interfejsu API aparatu Unity",
+	"configuration.projectPath.description": "Ścieżka projektu",
+	"configuration.logFile.description": "Ścieżka do pliku dziennika dla debugera",
+	"configuration.endPoint.description": "ip:port",
+	"configuration.refreshOnSave.description": "Odśwież bazę danych zasobów aparatu Unity podczas zapisywania skryptu języka C#"
+}

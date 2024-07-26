@@ -1,0 +1,533 @@
+{
+	"publisher": "alfish",
+	"name": "godot-files",
+	"version": "0.0.9",
+	"license": "Unlicense",
+	"displayName": "Godot Files",
+	"description": "Better syntax-coloring and additional features for some files supported by Godot Editor.",
+	"icon": "icon.webp",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AlfishSoftware/godot-files-vscode"
+	},
+	"bugs": {
+		"url": "https://github.com/AlfishSoftware/godot-files-vscode/issues"
+	},
+	"sponsor": {
+		"url": "https://alfish.itch.io/godot-files-vscode"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"keywords": [
+		"godot",
+		"gdshader",
+		"gdshaderinc",
+		"shader",
+		"shading",
+		"gd",
+		"asset",
+		"config",
+		"properties",
+		"ini"
+	],
+	"type": "commonjs",
+	"main": "./dist/extension.js",
+	"browser": "./dist/extension.js",
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": "limited",
+			"description": "Only declarative features like syntax coloring are enabled on untrusted workspaces.",
+			"restrictedConfigurations": []
+		}
+	},
+	"activationEvents": [],
+	"contributes": {
+		"languages": [
+			{
+				"id": "godot-shader",
+				"aliases": [
+					"Godot Shader",
+					"Godot Shading Language",
+					"GDShader"
+				],
+				"extensions": [
+					".gdshader",
+					".gdshaderinc"
+				],
+				"filenamePatterns": [
+					"*.gdshader",
+					"*.gdshaderinc"
+				],
+				"icon": {
+					"dark": "./lang.gdshader/gdshader.dark.svg",
+					"light": "./lang.gdshader/gdshader.light.svg"
+				},
+				"mimetypes": [
+					"application/x-godot-shader"
+				],
+				"firstLine": "^\\s*shader_type\\s+(spatial|canvas_item|particles|sky|fog)\\s*;\\s*(//.*)?$",
+				"configuration": "./lang.gdshader/gdshader.language-configuration.json"
+			},
+			{
+				"id": "godot-project",
+				"aliases": [
+					"Godot Project Definition",
+					"Godot Project Properties Asset"
+				],
+				"filenames": [
+					"project.godot"
+				],
+				"icon": {
+					"dark": "./lang.gdasset/godot-project.dark.svg",
+					"light": "./lang.gdasset/godot-project.light.svg"
+				},
+				"mimetypes": [
+					"application/x-godot-project"
+				],
+				"configuration": "./lang.gdasset/gdasset.language-configuration.json"
+			},
+			{
+				"id": "godot-resource",
+				"aliases": [
+					"Resource Asset Definition",
+					"Textual Resource Properties"
+				],
+				"extensions": [
+					".tres",
+					".gdns"
+				],
+				"icon": {
+					"dark": "./lang.gdasset/godot-resource.dark.svg",
+					"light": "./lang.gdasset/godot-resource.light.svg"
+				},
+				"mimetypes": [
+					"application/x-godot-resource"
+				],
+				"firstLine": "^\\[gd_resource(\\s+\\w+=(\\d+|\"([^\"\\\\]|\\\\.)*\"))*\\s*\\]\\s*([;#].*)?$",
+				"configuration": "./lang.gdasset/gdasset.language-configuration.json"
+			},
+			{
+				"id": "godot-scene",
+				"aliases": [
+					"Scene Asset Definition",
+					"Textual Scene Properties"
+				],
+				"extensions": [
+					".tscn",
+					".escn"
+				],
+				"icon": {
+					"dark": "./lang.gdasset/godot-scene.dark.svg",
+					"light": "./lang.gdasset/godot-scene.light.svg"
+				},
+				"mimetypes": [
+					"application/x-godot-scene"
+				],
+				"firstLine": "^\\[gd_scene(\\s+\\w+=(\\d+|\"([^\"\\\\]|\\\\.)*\"))*\\s*\\]\\s*([;#].*)?$",
+				"configuration": "./lang.gdasset/gdasset.language-configuration.json"
+			},
+			{
+				"id": "godot-asset",
+				"aliases": [
+					"Asset Properties Definition",
+					"Godot Asset",
+					"GDAsset"
+				],
+				"extensions": [
+					".import",
+					".gdnlib",
+					".tet",
+					".remap"
+				],
+				"filenames": [
+					"export_presets.cfg"
+				],
+				"filenamePatterns": [
+					"**/.godot/**/*.cfg",
+					"**/.godot/imported/*.md5"
+				],
+				"icon": {
+					"dark": "./lang.gdasset/godot-asset.dark.svg",
+					"light": "./lang.gdasset/godot-asset.light.svg"
+				},
+				"firstLine": "^\\[(remap|general|preset\\.\\d+)(\\s+\\w+=(\\d+|\"([^\"\\\\]|\\\\.)*\"))*\\s*\\]\\s*([;#].*)?$",
+				"configuration": "./lang.gdasset/gdasset.language-configuration.json"
+			},
+			{
+				"id": "godot-docs-webpage",
+				"filenamePatterns": [
+					"**/godot-docs.*.ide:/**/*.html/*"
+				],
+				"icon": {
+					"dark": "./lang.godot-docs/godot-docs-webpage.color.svg",
+					"light": "./lang.godot-docs/godot-docs-webpage.color.svg"
+				}
+			},
+			{
+				"id": "config-definition",
+				"aliases": [
+					"Configuration Properties",
+					"Desktop Entry"
+				],
+				"extensions": [
+					".cfg",
+					".desktop",
+					".directory"
+				],
+				"filenames": [
+					".gitconfig"
+				],
+				"filenamePatterns": [
+					"**/.git/config"
+				],
+				"icon": {
+					"dark": "./lang.gdasset/godot-asset.dark.svg",
+					"light": "./lang.gdasset/godot-asset.light.svg"
+				},
+				"firstLine": "^\\[Desktop Entry\\]$",
+				"configuration": "./lang.config-definition/config-definition.language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "godot-shader",
+				"scopeName": "source.gdshader.a",
+				"path": "./lang.gdshader/gdshader.tmLanguage.json"
+			},
+			{
+				"language": "godot-project",
+				"scopeName": "source.gdasset",
+				"path": "./lang.gdasset/gdasset.tmLanguage.json"
+			},
+			{
+				"language": "godot-resource",
+				"scopeName": "source.gdasset",
+				"path": "./lang.gdasset/gdasset.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.block.gdshader": "gdshader",
+					"meta.embedded.block.gdscript": "gdscript"
+				}
+			},
+			{
+				"language": "godot-scene",
+				"scopeName": "source.gdasset",
+				"path": "./lang.gdasset/gdasset.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.block.gdshader": "gdshader",
+					"meta.embedded.block.gdscript": "gdscript"
+				}
+			},
+			{
+				"language": "godot-asset",
+				"scopeName": "source.gdasset",
+				"path": "./lang.gdasset/gdasset.tmLanguage.json"
+			},
+			{
+				"language": "config-definition",
+				"scopeName": "source.gdasset",
+				"path": "./lang.gdasset/gdasset.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "godot-shader",
+				"path": "./lang.gdshader/gdshader.code-snippets"
+			},
+			{
+				"language": "godot-project",
+				"path": "./lang.gdasset/gdasset.code-snippets"
+			},
+			{
+				"language": "godot-resource",
+				"path": "./lang.gdasset/gdasset.code-snippets"
+			},
+			{
+				"language": "godot-scene",
+				"path": "./lang.gdasset/gdasset.code-snippets"
+			},
+			{
+				"language": "godot-asset",
+				"path": "./lang.gdasset/gdasset.code-snippets"
+			},
+			{
+				"language": "config-definition",
+				"path": "./lang.config-definition/config-definition.code-snippets"
+			}
+		],
+		"problemMatchers": [],
+		"customEditors": [
+			{
+				"viewType": "godotFiles.docsBrowser",
+				"displayName": "Godot Documentation Browser",
+				"selector": [
+					{
+						"filenamePattern": "**/godot-docs.*.ide:/**/*.html/*"
+					}
+				]
+			}
+		],
+		"commands": [
+			{
+				"command": "godotFiles.unlockEarlyAccess",
+				"category": "Godot Files",
+				"title": "Unlock features in early access",
+				"icon": "$(key)",
+				"enablement": "isWorkspaceTrusted"
+			},
+			{
+				"command": "godotFiles.openApiDocs",
+				"category": "Godot Files",
+				"title": "Open Godot API Documentation",
+				"icon": "$(book)",
+				"enablement": "isWorkspaceTrusted"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.navigateBack",
+				"category": "Godot Files: Active Documentation Page",
+				"title": "Go Back",
+				"icon": "$(arrow-left)",
+				"enablement": "activeWebviewPanelId == 'godotFiles.docsBrowser' && godotFiles.activeDocsPage.canNavigateBack"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.navigateForward",
+				"category": "Godot Files: Active Documentation Page",
+				"title": "Go Forward",
+				"icon": "$(arrow-right)",
+				"enablement": "activeWebviewPanelId == 'godotFiles.docsBrowser' && godotFiles.activeDocsPage.canNavigateForward"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.reload",
+				"category": "Godot Files: Active Documentation Page",
+				"title": "Reload",
+				"icon": "$(refresh)",
+				"enablement": "activeWebviewPanelId == 'godotFiles.docsBrowser'"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.openInBrowser",
+				"category": "Godot Files: Active Documentation Page",
+				"title": "Open in External Browser",
+				"icon": "$(link-external)",
+				"enablement": "activeWebviewPanelId == 'godotFiles.docsBrowser'"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.findNext",
+				"category": "Godot Files: Active Documentation Page: Find",
+				"title": "Next Match",
+				"icon": "$(find-next-match)",
+				"enablement": "activeWebviewPanelId == 'godotFiles.docsBrowser' && webviewFindWidgetEnabled && !editorFocus"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.findPrevious",
+				"category": "Godot Files: Active Documentation Page: Find",
+				"title": "Previous Match",
+				"icon": "$(find-previous-match)",
+				"enablement": "activeWebviewPanelId == 'godotFiles.docsBrowser' && webviewFindWidgetEnabled && !editorFocus"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "godotFiles.openApiDocs",
+				"key": "ctrl+f1",
+				"mac": "alt+cmd+d",
+				"when": "isWorkspaceTrusted && (editorLangId =~ /^(?:gd|godot-)(?:script|shader|resource|scene|asset|project)$/ || resource =~ /\\bGodot\\b/i)"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.navigateBack",
+				"key": "ctrl+[",
+				"mac": "cmd+[",
+				"when": "activeWebviewPanelId == 'godotFiles.docsBrowser' && godotFiles.activeDocsPage.canNavigateBack"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.navigateForward",
+				"key": "ctrl+]",
+				"mac": "cmd+]",
+				"when": "activeWebviewPanelId == 'godotFiles.docsBrowser' && godotFiles.activeDocsPage.canNavigateForward"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.reload",
+				"key": "f5",
+				"when": "activeWebviewPanelId == 'godotFiles.docsBrowser'"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.openInBrowser",
+				"key": "alt+f5",
+				"when": "activeWebviewPanelId == 'godotFiles.docsBrowser'"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.findNext",
+				"key": "f3",
+				"mac": "cmd+g",
+				"when": "activeWebviewPanelId == 'godotFiles.docsBrowser' && webviewFindWidgetEnabled && !editorFocus"
+			},
+			{
+				"command": "godotFiles.activeDocsPage.findPrevious",
+				"key": "shift+f3",
+				"mac": "shift+cmd+g",
+				"when": "activeWebviewPanelId == 'godotFiles.docsBrowser' && webviewFindWidgetEnabled && !editorFocus"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "godotFiles.activeDocsPage.navigateBack",
+					"group": "navigation@1",
+					"when": "activeWebviewPanelId == 'godotFiles.docsBrowser' && godotFiles.activeDocsPage.canNavigateBack"
+				},
+				{
+					"command": "godotFiles.activeDocsPage.navigateForward",
+					"group": "navigation@2",
+					"when": "activeWebviewPanelId == 'godotFiles.docsBrowser' && godotFiles.activeDocsPage.canNavigateForward"
+				},
+				{
+					"command": "godotFiles.activeDocsPage.reload",
+					"alt": "godotFiles.activeDocsPage.openInBrowser",
+					"group": "navigation@3",
+					"when": "activeWebviewPanelId == 'godotFiles.docsBrowser'"
+				}
+			],
+			"extension/context": [
+				{
+					"command": "godotFiles.unlockEarlyAccess",
+					"when": "isWorkspaceTrusted && extension == alfish.godot-files"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"title": "Godot Files",
+				"properties": {
+					"godotFiles.godotCachePath": {
+						"scope": "machine-overridable",
+						"type": "object",
+						"default": {
+							"win32": [
+								"${env:LOCALAPPDATA}/Godot/",
+								"~/AppData/Local/Godot/",
+								"${env:TEMP}/Godot/"
+							],
+							"darwin": [
+								"~/Library/Caches/Godot/"
+							],
+							"linux": [
+								"~/.cache/godot/",
+								"~/.var/app/org.godotengine.GodotSharp/cache/godot/",
+								"~/.var/app/org.godotengine.Godot3Sharp/cache/godot/",
+								"~/.var/app/org.godotengine.Godot/cache/godot/",
+								"~/.var/app/org.godotengine.Godot3/cache/godot/"
+							]
+						},
+						"additionalProperties": {
+							"type": "array",
+							"description": "Array of paths to Godot cache files for this platform id (as returned by NodeJS).",
+							"items": {
+								"type": "string",
+								"description": "A path to Godot cache files in this platform."
+							}
+						},
+						"markdownDescription": "Paths to Godot cache files in each platform. The defaults should work in most cases. Add a path when using a Godot installation in [self-contained mode](https://docs.godotengine.org/en/stable/tutorials/io/data_paths.html#self-contained-mode).\n\nThe keys are platform ids as returned by NodeJS: `win32` (Windows), `darwin` (macOS), `linux`.\n\nEach key maps to an array of path strings. A starting `~/` in the path is equivalent to `${userHome}/`. Substitution is also supported for `${workspaceFolder}` and `${env:VARIABLE}`. Glob patterns are *not* allowed. The order in the array doesn't matter, since all paths are always scanned to get the most recent cache file."
+					},
+					"godotFiles.documentation.viewer": {
+						"order": 100,
+						"scope": "machine-overridable",
+						"type": "string",
+						"default": "webview",
+						"markdownDescription": "Specifies how the Godot Documentation is opened when online. The `godot-tools` viewer will be used when you're offline.\n\n⚠ This setting is exclusive to [early access](command:godotFiles.unlockEarlyAccess) (otherwise, only `godot-tools` will be used).",
+						"enum": [
+							"browser",
+							"webview",
+							"godot-tools"
+						],
+						"enumDescriptions": [
+							"Use your browser to open the documentation URL. Supports going to the specific API version.",
+							"Use a tab in the IDE to open the documentation website. Supports going to the specific API version. Supports redirecting inherited members to their definition.\nNote: it's possible that some future website changes could break this, so use the browser instead if you notice issues.",
+							"Use the official godot-tools extension to open a documentation in a tab. Note that this requires the Godot Editor to be running and connected to that extension."
+						]
+					},
+					"godotFiles.documentation.webview.hideSidebar": {
+						"order": 101,
+						"scope": "machine",
+						"type": "boolean",
+						"default": false,
+						"markdownDescription": "Enable to show only the documentation content itself, hiding the navigation sidebar when loading a page (except for the home page).\n\n⚠ Applies only to the `webview` documentation viewer, which is exclusive to [early access](command:godotFiles.unlockEarlyAccess)."
+					},
+					"godotFiles.documentation.webview.keepTabs": {
+						"order": 101,
+						"scope": "machine",
+						"type": "boolean",
+						"default": false,
+						"markdownDescription": "Enable to always open links in a new tab; otherwise you need to hold Ctrl/Cmd when clicking a link to open it in a new tab.\n\n⚠ Applies only to the `webview` documentation viewer, which is exclusive to [early access](command:godotFiles.unlockEarlyAccess)."
+					}
+				}
+			},
+			{
+				"title": "GDAsset",
+				"properties": {
+					"godotFiles.hover.previewResource": {
+						"order": 0,
+						"scope": "language-overridable",
+						"type": "boolean",
+						"default": true,
+						"description": "Disable if you don't want tooltips to show an image preview of the resource or a link to it."
+					},
+					"godotFiles.inlineColors.single": {
+						"order": 100,
+						"scope": "language-overridable",
+						"type": "boolean",
+						"default": true,
+						"markdownDescription": "Show inline color decorators on `Color(…)` values."
+					},
+					"godotFiles.inlineColors.array": {
+						"order": 100,
+						"scope": "language-overridable",
+						"type": "boolean",
+						"default": true,
+						"description": "Show inline color decorators on color values within arrays."
+					},
+					"godotFiles.clarifyArrays.vector": {
+						"order": 200,
+						"scope": "language-overridable",
+						"type": "boolean",
+						"default": true,
+						"markdownDescription": "Show implied parentheses around each vector in a packed array.\n\n⚠ Exclusive to [early access](command:godotFiles.unlockEarlyAccess)."
+					},
+					"godotFiles.clarifyArrays.color": {
+						"order": 200,
+						"scope": "language-overridable",
+						"type": "boolean",
+						"default": false,
+						"markdownDescription": "Show implied parentheses around each color in a packed array.\n\n⚠ Exclusive to [early access](command:godotFiles.unlockEarlyAccess)."
+					}
+				}
+			}
+		]
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.89.0",
+		"typescript": "^5.4.5"
+	},
+	"engines": {
+		"vscode": "^1.89.0"
+	},
+	"scripts": {
+		"open-in-browser": "npm run compile && vscode-test-web --quality=stable --browser=none --extensionDevelopmentPath=. .",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"preproduction": "npm prune --omit=dev --no-audit",
+		"vscode:prepublish": "npm run compile && npm run preproduction"
+	},
+	"__metadata": {
+		"id": "60d25647-71b1-417a-8005-6b22941c0895",
+		"publisherId": "1d9e24ea-5336-4674-a3d6-dae33f10182c",
+		"publisherDisplayName": "Alfish",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1718308712642,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

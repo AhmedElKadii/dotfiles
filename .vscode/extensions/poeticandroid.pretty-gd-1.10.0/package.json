@@ -1,0 +1,66 @@
+{
+	"name": "pretty-gd",
+	"displayName": "pretty.gd",
+	"description": "Formatter for GDscript",
+	"icon": "images/pretty.png",
+	"version": "1.10.0",
+	"publisher": "poeticAndroid",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/poeticAndroid/pretty-gd.git"
+	},
+	"bugs": {
+		"url": "https://github.com/poeticAndroid/pretty-gd/issues"
+	},
+	"homepage": "https://github.com/poeticAndroid/pretty-gd#readme",
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"categories": [
+		"Formatters"
+	],
+	"activationEvents": [
+		"onLanguage:gdscript"
+	],
+	"languages": [
+		{
+			"id": "gdscript",
+			"aliases": [
+				"GDScript",
+				"gdscript"
+			],
+			"extensions": [
+				".gd"
+			]
+		}
+	],
+	"main": "./extension.js",
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.70.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "16.x",
+		"eslint": "^8.20.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.0.0",
+		"typescript": "^4.7.4",
+		"@vscode/test-electron": "^2.1.5"
+	},
+	"__metadata": {
+		"id": "016a26b7-5519-4e48-84fa-0d1028aba0af",
+		"publisherId": "1e0e53a1-eabc-4ee8-979b-b8bc863f3ce9",
+		"publisherDisplayName": "poetic android",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1716551409722,
+		"pinned": false,
+		"source": "gallery"
+	}
+}

@@ -1,0 +1,97 @@
+{
+	"name": "gdshader-lsp",
+	"version": "1.0.7",
+	"description": "Language server for the Godot Shading language.",
+	"icon": "icon.png",
+	"readme": "README.md",
+	"publisher": "godofavacyn",
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"godot",
+		"gdshader",
+		"shader"
+	],
+	"author": "godofavacyn",
+	"license": "ISC",
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"activationEvents": [
+		"workspaceContains:**/project.godot"
+	],
+	"main": "./client/out/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Example configuration",
+			"properties": {
+				"languageServerExample.maxNumberOfProblems": {
+					"scope": "resource",
+					"type": "number",
+					"default": 100,
+					"description": "Controls the max number of problems produced by the server."
+				},
+				"languageServerExample.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "Traces the communication between client and server."
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "gdshader",
+				"extensions": [
+					".gdshader",
+					".gdshaderinc"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "gdshader",
+				"scopeName": "source.gdshader",
+				"path": "./syntaxes/gdshader.tmLanguage.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"lint": "eslint ./client/src --ext .ts,.tsx",
+		"postinstall": "cd client && npm install && cd ..",
+		"test": "sh ./scripts/e2e.sh"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.6",
+		"@types/node": "^18.14.6",
+		"@typescript-eslint/eslint-plugin": "^6.14.0",
+		"@typescript-eslint/parser": "^6.14.0",
+		"eslint": "^8.56.0",
+		"js-yaml": "^4.1.0",
+		"mocha": "^10.2.0",
+		"typescript": "^5.3.3"
+	},
+	"__metadata": {
+		"id": "a5740a6a-54d2-4d69-8882-2c18466d2165",
+		"publisherId": "afa8a945-4945-44ad-bd3c-947ac94851b6",
+		"publisherDisplayName": "God of Avacyn",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1717103569905,
+		"pinned": false,
+		"source": "gallery"
+	}
+}

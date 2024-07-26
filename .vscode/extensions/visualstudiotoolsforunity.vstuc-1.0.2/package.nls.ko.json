@@ -1,0 +1,10 @@
+{
+	"extension.displayName": "Unity",
+	"extension.description": "Visual Studio Code를 Unity와 통합",
+	"commands.attachUnityDebugger.title": "Unity 디버거 연결",
+	"commands.showUnityAPIReference.title": "Unity API 참고자료",
+	"configuration.projectPath.description": "프로젝트 경로",
+	"configuration.logFile.description": "디버거의 로그 파일 경로",
+	"configuration.endPoint.description": "ip:port",
+	"configuration.refreshOnSave.description": "C# 스크립트를 저장할 때 Unity의 자산 데이터베이스 새로 고침"
+}

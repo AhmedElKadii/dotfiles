@@ -1,0 +1,10 @@
+{
+	"extension.displayName": "Unity",
+	"extension.description": "將 Visual Studio Code 與 Unity 整合",
+	"commands.attachUnityDebugger.title": "附加 Unity 偵錯工具",
+	"commands.showUnityAPIReference.title": "Unity API 參考",
+	"configuration.projectPath.description": "專案路徑",
+	"configuration.logFile.description": "偵錯工具記錄檔的路徑",
+	"configuration.endPoint.description": "ip:port",
+	"configuration.refreshOnSave.description": "在儲存 C# 指令碼時重新整理 Unity 的資產資料庫"
+}

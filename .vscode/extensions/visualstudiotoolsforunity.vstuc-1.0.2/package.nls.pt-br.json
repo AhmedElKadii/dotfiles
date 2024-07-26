@@ -1,0 +1,10 @@
+{
+	"extension.displayName": "Unity",
+	"extension.description": "Integra o Visual Studio Code ao Unity",
+	"commands.attachUnityDebugger.title": "Anexar Depurador do Unity",
+	"commands.showUnityAPIReference.title": "Referência da API do Unity",
+	"configuration.projectPath.description": "Caminho do Projeto",
+	"configuration.logFile.description": "Caminho para o arquivo de log do depurador",
+	"configuration.endPoint.description": "ip:porta",
+	"configuration.refreshOnSave.description": "Atualize o banco de dados de ativos do Unity ao salvar um script C#"
+}

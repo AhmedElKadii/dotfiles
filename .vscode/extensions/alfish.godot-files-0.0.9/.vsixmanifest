@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+		<Metadata>
+			<Identity Language="en-US" Id="godot-files" Version="0.0.9" Publisher="alfish" />
+			<DisplayName>Godot Files</DisplayName>
+			<Description xml:space="preserve">Better syntax-coloring and additional features for some files supported by Godot Editor.</Description>
+			<Tags>godot,gdshader,gdshaderinc,shader,shading,gd,asset,config,properties,ini,snippet,keybindings,godot-shader,Godot Shader,Godot Shading Language,GDShader,__ext_gdshader,__ext_gdshaderinc,godot-project,Godot Project Definition,Godot Project Properties Asset,godot-resource,Resource Asset Definition,Textual Resource Properties,__ext_tres,__ext_gdns,godot-scene,Scene Asset Definition,Textual Scene Properties,__ext_tscn,__ext_escn,godot-asset,Asset Properties Definition,Godot Asset,GDAsset,__ext_import,__ext_gdnlib,__ext_tet,__ext_remap,godot-docs-webpage,config-definition,Configuration Properties,Desktop Entry,__ext_cfg,__ext_desktop,__ext_directory,__web_extension,__sponsor_extension</Tags>
+			<Categories>Programming Languages,Other</Categories>
+			<GalleryFlags>Public</GalleryFlags>
+			
+			<Properties>
+				<Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.89.0" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionKind" Value="workspace,web" />
+				<Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
+				
+				<Property Id="Microsoft.VisualStudio.Code.SponsorLink" Value="https://alfish.itch.io/godot-files-vscode" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/AlfishSoftware/godot-files-vscode.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/AlfishSoftware/godot-files-vscode.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/AlfishSoftware/godot-files-vscode.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/AlfishSoftware/godot-files-vscode/issues" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/AlfishSoftware/godot-files-vscode#readme" />
+				
+				
+				<Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
+				<Property Id="Microsoft.VisualStudio.Services.Content.Pricing" Value="Free"/>
+
+				
+				
+			</Properties>
+			<License>extension/LICENSE.md</License>
+			<Icon>extension/icon.webp</Icon>
+		</Metadata>
+		<Installation>
+			<InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+		</Installation>
+		<Dependencies/>
+		<Assets>
+			<Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+			<Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/CHANGELOG.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/icon.webp" Addressable="true" />
+		</Assets>
+	</PackageManifest>

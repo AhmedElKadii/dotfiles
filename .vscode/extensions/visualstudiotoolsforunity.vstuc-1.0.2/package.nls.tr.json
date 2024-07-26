@@ -1,0 +1,10 @@
+{
+	"extension.displayName": "Unity",
+	"extension.description": "Unity ile Visual Studio Code’u tümleştirir",
+	"commands.attachUnityDebugger.title": "Unity Hata Ayıklayıcısı Ekle",
+	"commands.showUnityAPIReference.title": "Unity API Başvurusu",
+	"configuration.projectPath.description": "Proje Yolu",
+	"configuration.logFile.description": "Hata ayıklayıcısı için günlük dosyasının yolu",
+	"configuration.endPoint.description": "ip:port",
+	"configuration.refreshOnSave.description": "C# betiği kaydedilirken Unity'nin Varlık Veritabanını yenileyin"
+}

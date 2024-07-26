@@ -1,0 +1,9 @@
+﻿01:16:00.624926: GodotDebugSession: Starting debug session...
+01:16:01.129308: Connecting to Godot Ide Server
+01:16:01.133369: Connection open with Godot Ide Server
+01:16:01.134070: Accept client...
+01:16:01.167412: Connection open with Ide Client
+01:16:01.174164: Peer connection started
+01:16:01.174603: Sending message: Request | DebugPlay
+01:16:01.377304: Received message: DebugPlay
+01:16:07.357662: GodotDebugSession: Debug session terminated.

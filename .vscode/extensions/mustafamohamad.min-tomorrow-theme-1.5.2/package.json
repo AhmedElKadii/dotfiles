@@ -1,0 +1,45 @@
+{
+	"name": "min-tomorrow-theme",
+	"displayName": "Min Tomorrow Theme",
+	"description": "A minimal theme of Tomorrow",
+	"publisher": "mustafamohamad",
+	"version": "1.5.2",
+	"homepage": "https://github.com/musm/min-tomorrow-theme/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/musm/min-tomorrow-theme.git"
+	},
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "icon.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Min Tomorrow Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/min-dark-tomorrow-color-theme.json"
+			}
+		]
+	},
+	"galleryBanner": {
+		"color": "#000000",
+		"theme": "dark"
+	},
+	"__metadata": {
+		"id": "6544f4c9-5a57-4b3c-9fc4-44c58bb2e671",
+		"publisherId": "7ac5a9f1-43b5-41b6-8b28-309d06c75c21",
+		"publisherDisplayName": "Mustafa Mohamad",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1721310000445,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

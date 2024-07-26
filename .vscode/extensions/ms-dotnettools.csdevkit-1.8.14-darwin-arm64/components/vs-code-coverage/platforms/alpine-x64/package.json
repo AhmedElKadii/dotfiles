@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "dependencies": {
+    "@microsoft/codecoverage-vscode-services.alpine-x64": "17.12.0-preview.24325.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://devdiv.visualstudio.com/DevDiv/_git/vs-code-coverage",
+    "branch": "main"
+  }
+}

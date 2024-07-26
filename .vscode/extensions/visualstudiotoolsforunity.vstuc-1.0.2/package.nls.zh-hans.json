@@ -1,0 +1,10 @@
+{
+	"extension.displayName": "Unity",
+	"extension.description": "将 Visual Studio Code 与 Unity 集成",
+	"commands.attachUnityDebugger.title": "附加 Unity 调试程序",
+	"commands.showUnityAPIReference.title": "Unity API 引用",
+	"configuration.projectPath.description": "项目路径",
+	"configuration.logFile.description": "调试器的日志文件的路径",
+	"configuration.endPoint.description": "ip:port",
+	"configuration.refreshOnSave.description": "保存 C# 脚本时刷新 Unity 的资产数据库"
+}

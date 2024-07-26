@@ -1,0 +1,10 @@
+{
+	"extension.displayName": "Unity",
+	"extension.description": "Интеграция Visual Studio Code с Unity",
+	"commands.attachUnityDebugger.title": "Подключить отладчик Unity",
+	"commands.showUnityAPIReference.title": "Справочник по API Unity",
+	"configuration.projectPath.description": "Путь к проекту",
+	"configuration.logFile.description": "Путь к файлу журнала для отладчика",
+	"configuration.endPoint.description": "ip:port",
+	"configuration.refreshOnSave.description": "Обновление базы данных ресурсов Unity при сохранении скрипта C#"
+}

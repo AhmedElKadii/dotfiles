@@ -1,0 +1,10 @@
+{
+	"extension.displayName": "Unity",
+	"extension.description": "Intègre Visual Studio Code avec Unity",
+	"commands.attachUnityDebugger.title": "Attacher le débogueur Unity",
+	"commands.showUnityAPIReference.title": "Informations de référence sur l’API Unity",
+	"configuration.projectPath.description": "Chemin d’accès du projet",
+	"configuration.logFile.description": "Chemin du fichier journal du débogueur",
+	"configuration.endPoint.description": "ip:port",
+	"configuration.refreshOnSave.description": "Actualiser la base de données d'assets Unity lors de l'enregistrement d'un script C#"
+}
