@@ -1,7 +1,6 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
+-- leader map
+vim.g.mapleader = " "
 
--- Show Non-Relative Numbers
-vim.cmd("set number")
-vim.cmd("set norelativenumber")
-vim.cmd("set nocursorline")
+require("config.lazy")
+require("config.options")
+require("config.keybinds")

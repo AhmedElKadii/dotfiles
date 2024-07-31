@@ -1,35 +1,29 @@
-vim.g.mapleader = " "
-
-vim.scriptencoding = "utf-8"
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "uft-8"
-
-vim.opt.number = true
-
-vim.opt.title = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.hlsearch = true
-vim.opt.backup = false
-vim.opt.showcmd = false
-vim.opt.cmdheight = 0
-vim.opt.laststatus = 0
-vim.opt.expandtab = true
-vim.opt.scrolloff = 10
-vim.opt.inccommand = "split"
-vim.opt.ignorecase = true
-vim.opt.smarttab = true
-vim.opt.breakindent = true
+-- indent settings
 vim.cmd("set noexpandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
-vim.opt.wrap = false
-vim.opt.backspace = { "start", "eol", "indent" }
-vim.opt.path:append({ "**" })
-vim.opt.wildignore:append({ "*/node_modules/*" })
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.splitkeep = "cursor"
-vim.opt.mouse = ""
 
-vim.opt.formatoptions:append({ "r" })
+-- side numbers
+vim.cmd("set number")
+vim.cmd("set norelativenumber")
+
+-- clipboard
+vim.cmd("set clipboard^=unnamed")
+
+-- Define empty signs for diagnostics to hide the letters in the gutter
+vim.fn.sign_define("DiagnosticSignError", { text = "", numhl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = "", numhl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = "", numhl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "", numhl = "DiagnosticSignHint" })
+
+-- fundo
+vim.o.undofile = true
+
+-- quality of life
+vim.cmd("set showtabline=0")
+
+-- vim specifics
+vim.cmd("set encoding=UTF-8")
+
+-- theme
+vim.cmd.colorscheme "gruvbox"
