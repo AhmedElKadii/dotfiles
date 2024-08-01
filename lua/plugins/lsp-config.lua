@@ -27,35 +27,38 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
+			})
+			lspconfig.gdscript.setup({
+				capabilities = capabilities,
 			})
 			lspconfig.csharp_ls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.clangd.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.basedpyright.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.html.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.jsonls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.tsserver.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.markdown_oxide.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.hydra_lsp.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 		end,
 	},
