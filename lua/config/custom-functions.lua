@@ -1,34 +1,35 @@
 -- general
--- Custom function to execute the command based on file extension
-function new_script(path, filename, type)
-    -- Determine the file extension from the filename
-    local ext = filename:match("^.+(%..+)$")  -- Extract the file extension
-
-    if ext == ".cs" then
-        CreateUnityCSharpScript(filename)
-    elseif ext == ".gd" then
-        CreateGodotGDScript(path, filename, type)
+-- Custom function to determine project type and call the corresponding command
+function determine_file_type(args)
+    -- Check for Unity project indicator
+    if vim.fn.filereadable('ProjectSettings/ProjectSettings.asset') == 1 then
+        vim.cmd(string.format("NewUnityScript %s", args))
+    -- Check for Godot project indicator
+    elseif vim.fn.filereadable('project.godot') == 1 then
+        vim.cmd(string.format("NewGodotScript %s", args))
     else
-        print("Unsupported file type for script creation.")
+        print("Unsupported project type for script creation.")
     end
 end
 
 vim.api.nvim_create_user_command(
-    'NewScript',
+    'DetermineFileType',
     function(opts)
-        local args = vim.split(opts.args, ' ', true)  -- Split arguments by spaces
-        local path = args[1] or ""
-        local filename = args[2] or ""
-        local type = args[3] or ""  -- Only needed for Godot scripts
-
-        new_script(path, filename, type)
+        determine_file_type(opts.args)
     end,
-    { nargs = '*', complete = 'file' }
+    { nargs = '*' }
 )
 
 -- unity
+-- Custom function to check if we are in a Godot project
+local unityproject = io.open(vim.fn.getcwd()..'/ProjectSettings/ProjectSettings.asset', 'r')
+if unityproject then
+    io.close(unityproject)
+    vim.fn.serverstart '/tmp/nvimsocket'
+end
 -- Custom function to create a new Unity C# script with default boilerplate code
-function CreateUnityCSharpScript(filename)
+function CreateUnityCSharpScript(filename, classType)
+    classType = classType or "MonoBehaviour"
     if not filename:match(".cs$") then
         filename = filename .. ".cs"
     end
@@ -38,7 +39,7 @@ function CreateUnityCSharpScript(filename)
     if file then
         file:write(
           "using UnityEngine;\n\n" ..
-          "public class " .. filename:gsub('.cs', '') .. " : MonoBehaviour\n" ..
+          "public class " .. filename:gsub('.cs', '') .. " : " .. classType .. "\n" ..
           "{\n" ..
           "    void Start()\n" ..
           "    {\n" ..
@@ -61,9 +62,13 @@ end
 vim.api.nvim_create_user_command(
     'NewUnityScript',
     function(opts)
-        CreateUnityCSharpScript(opts.args)
+        local args = vim.split(opts.args, ' ', true)
+        local filename = args[1] or ""
+        local classType = args[2]
+
+        CreateUnityCSharpScript(filename, classType)
     end,
-    { nargs = 1, complete = 'file' }
+    { nargs = '*' }
 )
 
 -- godot
@@ -73,13 +78,14 @@ if gdproject then
     io.close(gdproject)
     vim.fn.serverstart './godothost'
 end
-
 -- Custom function to create a new Godot GDScript with default boilerplate code
 function CreateGodotGDScript(path, filename, type)
+    type = type or "Node2D"
     if not filename:match(".gd$") then
+
         filename = filename .. ".gd"
     end
-    local fullPath = path .. filename
+    local fullPath = path .. "/" .. filename
     local file = io.open(fullPath, 'w')
 
     if file then
@@ -100,12 +106,12 @@ end
 vim.api.nvim_create_user_command(
     'NewGodotScript',
     function(opts)
-        local args = vim.split(opts.args, ' ', true)  -- Split arguments by spaces
+        local args = vim.split(opts.args, ' ', true)
         local path = args[1] or ""
         local filename = args[2] or ""
-        local type = args[3] or "Node2D"  -- Default type if not provided
+        local type = args[3]
 
         CreateGodotGDScript(path, filename, type)
     end,
-    { nargs = '*', complete = 'file' }
+    { nargs = '*' }
 )

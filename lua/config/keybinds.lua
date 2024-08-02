@@ -24,15 +24,16 @@ map('n', '<C-h>', '<C-W>h', {})
 map('n', '<C-j>', '<C-W>j', {})
 map('n', '<C-k>', '<C-W>k', {})
 map('n', '<C-l>', '<C-W>l', {})
--- splitting
--- map('n', '<C-\\>', ':vsplit<CR>', {})
-map('n', '<C-=>', ':split<CR>', { noremap = true, silent = true })
 
--- buffer switching
+-- buffer management
+map('n', '--', ':bd<CR>', {})
+map('n', '++', ':tabe<CR>', {})
+-- switching
 map('n', 'H', ':bprev<CR>', {})
 map('n', 'L', ':bnext<CR>', {})
-map('n', 'N', ':tabe<CR>', {})
-
+-- splitting
+map('n', '|', ':vsplit<CR>', {})
+map('n', '_', ':split<CR>', { noremap = true, silent = true })
 -- TODO
 -- todo
 map('n', '<leader>ft', ':Trouble todo<CR>', {})
@@ -60,7 +61,7 @@ map('n', '<leader>gr', vim.lsp.buf.references, {})
 map('n', '<leader>F', vim.lsp.buf.format, {})
 
 -- custom functions
-map('n', '<leader>cn', ':NewScript ', { noremap = true, silent = true })
+map('n', '<leader>n', ':DetermineFileType ', { noremap = true, silent = true })
 
 -- quality of life
 map('n', '<C-a>', 'ggVG', {})
