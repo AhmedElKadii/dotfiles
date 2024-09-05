@@ -33,14 +33,17 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.gdscript.setup({
+			lspconfig.csharp_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.csharp_ls.setup({
+			lspconfig.gdscript.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
+				cmd = { "clangd" },
+				filetypes = { "c", "cpp", "arduino", "ino" },
+				root_dir = require("lspconfig").util.root_pattern("*.ino", "arduino-cli.yaml"),
 			})
 			lspconfig.basedpyright.setup({
 				capabilities = capabilities,

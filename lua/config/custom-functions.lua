@@ -1,11 +1,14 @@
 -- general
 -- Custom function to determine project type and call the corresponding command
 function determine_file_type(args)
+    print("Determining file type...")
     -- Check for Unity project indicator
     if vim.fn.filereadable('ProjectSettings/ProjectSettings.asset') == 1 then
+        print("Unity project detected")
         vim.cmd(string.format("NewUnityScript %s", args))
     -- Check for Godot project indicator
     elseif vim.fn.filereadable('project.godot') == 1 then
+        print("Godot project detected")
         vim.cmd(string.format("NewGodotScript %s", args))
     else
         print("Unsupported project type for script creation.")
@@ -33,12 +36,21 @@ function CreateUnityCSharpScript(filename, classType)
     if not filename:match(".cs$") then
         filename = filename .. ".cs"
     end
+
+	local usageRefs = "\n\n"
+	if classType == "MonoBehaviour" then
+		usageRefs = "using UnityEngine;\n\n"
+	elseif classType == "ScriptableObject" or classType == "Editor" then
+		usageRefs = "using UnityEditor;\n\n"
+	else usageRefs = ""
+	end
+
     local path = 'Assets/Scripts/' .. filename
     local file = io.open(path, 'w')
 
     if file then
         file:write(
-          "using UnityEngine;\n\n" ..
+          usageRefs ..
           "public class " .. filename:gsub('.cs', '') .. " : " .. classType .. "\n" ..
           "{\n" ..
           "    void Start()\n" ..
@@ -79,12 +91,15 @@ if gdproject then
     vim.fn.serverstart './godothost'
 end
 -- Custom function to create a new Godot GDScript with default boilerplate code
-function CreateGodotGDScript(path, filename, type)
+function CreateGodotGDScript(filename, type, path)
     type = type or "Node2D"
-    if not filename:match(".gd$") then
 
+	path = path or vim.fn.expand('%:p:h')
+
+    if not filename:match(".gd$") then
         filename = filename .. ".gd"
     end
+
     local fullPath = path .. "/" .. filename
     local file = io.open(fullPath, 'w')
 

@@ -46,19 +46,46 @@ vim.cmd("set title")
 -- Define a Lua function to update the title with the file name
 function set_title()
     local filename = vim.fn.expand('%:t')  -- Get the base name of the file
-	if filename == "" then
-		filename = "[No Name]"
-	elseif filename == "NvimTree_1" then
-		filename = "File Explorer"
-	end
+    local modified = vim.bo.modified       -- Check if the file has been modified
+
+    if filename == "" then
+        filename = "[No Name]"
+    elseif filename == "NvimTree_1" then
+        filename = "File Explorer"
+    end
+
+    -- Add '*' if the file is modified
+    if modified then
+        filename = "*" .. filename
+    end
+
+    -- Update the title string
     vim.opt.titlestring = filename .. ' - nvim'
 end
 
--- Call the function initially to set the title
-set_title()
-
--- Update the title when the file changes
+-- Update the title when the buffer is entered
 vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function()
+        set_title()
+    end
+})
+
+-- Update the title when the file is written
+vim.api.nvim_create_autocmd("BufWritePost", {
+    callback = function()
+        set_title()
+    end
+})
+
+-- Update the title when the buffer is changed (e.g., via external changes)
+vim.api.nvim_create_autocmd("BufWritePost", {
+    callback = function()
+        set_title()
+    end
+})
+
+-- Ensure title is set initially
+vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         set_title()
     end

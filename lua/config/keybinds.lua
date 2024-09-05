@@ -41,6 +41,11 @@ map('n', '<leader>ft', ':Trouble todo<CR>', {})
 -- oil
 map('n', '<leader>o', ':Oil<CR>', {})
 
+-- arduino
+vim.api.nvim_set_keymap('n', '<leader>au', ':!arduino-cli compile --upload<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ac', ':!arduino-cli compile<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sm', ':term screen /dev/ttyUSB0 9600<CR>', { noremap = true, silent = true })
+
 -- chatgpt
 -- map('n', '<leader>cc', ':ChatGPT<CR>', {}) -- don't have an api key yet
 
