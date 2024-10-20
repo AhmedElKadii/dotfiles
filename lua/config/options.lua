@@ -8,6 +8,10 @@ vim.cmd("set number")
 vim.cmd("set norelativenumber")
 vim.cmd("set nocursorline")
 
+-- true colour
+vim.o.termguicolors = true
+vim.opt.termguicolors = true
+
 -- Create an autocommand group to handle highlighting
 vim.cmd([[
     augroup CursorLineNrHighlight
@@ -90,6 +94,12 @@ vim.api.nvim_create_autocmd("VimEnter", {
         set_title()
     end
 })
+
+-- Disable Treesitter for latex
+vim.api.nvim_create_autocmd({ "FIleType" }, { pattern = "tex" , group = optional_group, command = "TSBufDisable highlight" })
+
+-- Set Coceal Level
+vim.cmd("set conceallevel=2")
 
 -- theme
 vim.cmd.colorscheme "gruvbox"

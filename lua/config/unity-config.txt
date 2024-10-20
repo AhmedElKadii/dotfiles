@@ -1,0 +1,2 @@
+* Exec Path: /opt/homebrew/bin/nvr
+* Exec Flags: +$(Line) $(File)

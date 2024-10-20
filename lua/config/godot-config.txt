@@ -1,2 +1,2 @@
-# Exec Path: /opt/homebrew/bin/nvr
-# Exec Flags: --servername godothost --remote-send "<C-\><C-N>:e {file}<CR>:call cursor({line},{col})<CR>"
+* Exec Path: /opt/homebrew/bin/nvr
+* Exec Flags: --servername /tmp/nvimsocket --remote-send "<C-\><C-N>:e {file}<CR>:call cursor({line},{col})<CR>"

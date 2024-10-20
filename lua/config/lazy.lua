@@ -19,3 +19,4 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup("plugins")
+require('lazy').load({ plugins = { 'codesnap.nvim' } })

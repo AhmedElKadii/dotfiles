@@ -6,6 +6,29 @@ local builtin = require("telescope.builtin")
 map('n', '<leader>ff', builtin.find_files, {})
 map('n', '<leader>f', builtin.live_grep, {})
 
+-- hop
+map('n', ';', ':HopWord<CR>', {})
+
+-- compile
+map('n', '<F3>', ':lua Compile()<CR>', { noremap = true, silent = true })
+-- compile and run
+map('n', '<F5>', ':lua CompileAndRun()<CR>', { noremap = true, silent = true })
+
+-- codesnap
+map('x', '<C-s>', ':CodeSnap<CR>', {})
+map('x', '<C-S-s>', ':CodeSnapSave<CR>', {})
+
+-- minty
+map('n', '<C-c>', ':Huefy<CR>', {})
+
+-- debugging
+map('n', '<F1>', function() require('dap').toggle_breakpoint() end)
+map('n', '<F2>', function() require('dap').continue() end)
+
+-- zathura
+-- map('n', '<leader>z', ':!zathura %<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>z', ':!zathura <C-r>=expand("%:p:r") .. ".pdf"<CR> &<CR>', { noremap = true, silent = true })
+
 -- line moving
 map('n', '<C-S-k>', 'VxkP', {})
 map('n', '<C-S-j>', 'Vxp', {})
@@ -24,6 +47,8 @@ map('n', '<C-h>', '<C-W>h', {})
 map('n', '<C-j>', '<C-W>j', {})
 map('n', '<C-k>', '<C-W>k', {})
 map('n', '<C-l>', '<C-W>l', {})
+
+map('n', '<C-BS>', ':q<CR>', {})
 
 -- buffer management
 map('n', '--', ':bd<CR>', {})
@@ -69,5 +94,6 @@ map('n', '<leader>F', vim.lsp.buf.format, {})
 map('n', '<leader>n', ':DetermineFileType ', { noremap = true, silent = true })
 
 -- quality of life
+map('n', '>', '<C-a>', {})
+map('n', '<', '<C-x>', {})
 map('n', '<C-a>', 'ggVG', {})
-map('n', ';', ':', { noremap = true, silent = true })

@@ -7,6 +7,7 @@ return {
 			auto_install = true,
 			highlight = { enable = true },
 			indent = { enable = false },
+			disable = { "tex" },
 		})
 	end,
 }
